@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<title>About Page</title>
 	<link rel="stylesheet" href="style.css">
 	<script src="main.js" type="text/javascript"></script>
@@ -11,32 +12,63 @@
 
 <body>
 
+	<div id="drawer_background" class="drawer_background" onclick="closeNav()"></div>
+	<div id="nav_drawer" class="overlay">
+  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+  			&times;
+  		</a>
+  		<div class="overlay-content">
+  			<a href="/about" onclick="selectTab(1, true)">
+  				<div class="overlay-items">
+  					<i class="fas fa-info-circle overlay-icon"></i>
+    				<p>About</p>
+    			</div>
+    		</a>
+    		<a href="/terms" onclick="selectTab(2, true)">
+    			<div class="overlay-items">
+  					<i class="fas fa-file overlay-icon"></i>
+    				<p>Terms Of Use</p>
+    			</div>
+    		</a>
+    		<a href="/privacy" onclick="selectTab(3, true)">
+	    		<div class="overlay-items">
+	  				<i class="fas fa-user-secret overlay-icon"></i>
+	    			<p>Privacy Policy</p>
+	    		</div>
+	    	</a>
+	    	<a href="/contact" onclick="selectTab(4, true)">
+    			<div class="overlay-items">
+  					<i class="fas fa-envelope overlay-icon"></i>
+    				<p>Contact</p>
+				</div>
+    		</a>
+  		</div>
+	</div>
+
 	<div class="header">
 		<div class="toolbar">
 			<a class="troffo-icon" href="https://www.troffo.com/">
 				<img style="height: 48px;" src="troffo.png">
 			</a>
-			<!-- <div class="icon-div"> -->
-				<p class="line-icon">Information</p>
-			<div class="menu-icon">
+			<p class="heading-text">Information</p>
+			<div class="menu-icon" onclick="openNav()">
 				<i class="fas fa-bars"></i>
 			</div>
-			<!-- </div> -->
 		</div>
 
 		<div class="second-toolbar">
 			<ul class="tab-item-menu">
-				<li id="tab_1" onclick="selectTab(1)" class="tab-item active-tab">
-					<a href="#about">About</a>
+				<li id="tab_1" onclick="selectTab(1, false)" class="tab-item active-tab">
+					<a href="/about">About</a>
 				</li>
-				<li id="tab_2" onclick="selectTab(2)" class="tab-item">
-					<a href="#terms">Terms Of Use</a>
+				<li id="tab_2" onclick="selectTab(2, false)" class="tab-item">
+					<a href="/terms">Terms Of Use</a>
 				</li>
-				<li id="tab_3" onclick="selectTab(3)" class="tab-item">
-					<a href="#privacy">Privacy Policy</a>
+				<li id="tab_3" onclick="selectTab(3, false)" class="tab-item">
+					<a href="/privacy">Privacy Policy</a>
 				</li>
-				<li id="tab_4" onclick="selectTab(4)" class="tab-item">
-					<a href="#contact">Contact</a>
+				<li id="tab_4" onclick="selectTab(4, false)" class="tab-item">
+					<a href="/contact">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -46,8 +78,8 @@
 
 		<div id="tab_div_1" class="card">
 			<h1>About Troffo</h1>
-			<p>Troffo is a fairly new website with the goal of spreading fun and humor all over the web. 
-				Troffo is a funny site that has a wide range of humor and memes you could find online. Most of the content for Troffo comes from user-generated content. 
+			<p class="para-text">
+				Troffo is a fairly new website with the goal of spreading fun and humor all over the web. Troffo is a funny site that has a wide range of humor and memes you could find online. Most of the content for Troffo comes from user-generated content. 
 
 				<br><br>
 			    Troffo is a place of casual entertainment filled with memes and hilarious images with a unique and creative user interface where you can find popular memes on the go. 
@@ -67,7 +99,7 @@
 
 		<div id="tab_div_2" class="card hide-layout">
 			<h1>Terms & Conditions</h1>
-			<ol id= "terms_list" type="1">
+			<ol class="para-text" type="1">
         		<li>You must be at least 13 years old to use the service.</li>
         		<li>
         		You can not post violent, naked, partially nude, discriminatory, unlawful, infringing, disgusting, pornographic or sexually suggestive photos or other content through the Service.
@@ -108,7 +140,7 @@
 
 		<div id="tab_div_3" class="card hide-layout">
 			<h1>Privacy Policy</h1>
-			<p>
+			<p class="para-text">
 				Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
 				<br><br>
 				What personal information do we collect from the people that visit our blog, website or app? When ordering or registering on our site, as appropriate, you may be asked to enter your name, email address, mailing address or other details to help you with your experience.
@@ -130,7 +162,7 @@
 					To allow us to better service you in responding to your customer service requests.
 				</li>
 			</ol>
-			<p>
+			<p class="para-text">
 				<b>Do we use 'cookies'?</b><br>
 				Yes. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your Web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information. They are also used to help us understand your preferences based on previous or current site activity, which enables us to provide you with improved services. We also use cookies to help us compile aggregate data about site traffic and site interaction so that we can offer better site experiences and tools in the future. We use cookies to:
 				<br><br>
@@ -150,6 +182,32 @@
 
 		<div id="tab_div_4" class="card hide-layout">
 			<h1>Contact Us</h1>
+			<div class="form-container">
+				<form class="contact-form">
+					<label for="name">
+						<span>Full Name</span>
+						<input class="input-field" id="name" type="text" name="name">
+					</label>
+					<label for="email">
+						<span>Email Address</span>
+						<input id="email" type="email" name="email" class="input-field">
+					</label>
+					<label for="query_type">
+						<span>Regarding</span>
+						<input id="query_type" type="text" name="query_type" class="input-field">
+					</label>
+					<label for="message">
+						<span>Message</span>
+						<textarea name="message" class="input-field"></textarea>
+					</label>
+					<label>
+						<span></span>
+						<div class="input-field" style="padding: 0; border: none; box-shadow: none;">
+							<input type="submit" value="Submit" class="submit-button" />
+						</div>
+					</label>
+				</form>
+			<div>
 		</div>
 
 	</div>

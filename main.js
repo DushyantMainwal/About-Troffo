@@ -14,7 +14,7 @@ window.onload = function(){
     	selectTab(4);
 }
 
-function selectTab(tabNumber) {
+function selectTab(tabNumber, isDrawerItem) {
 	if (tabNumber === prevTab) return;
 	
 	var prevTabElement = document.getElementById("tab_" + prevTab);
@@ -30,4 +30,28 @@ function selectTab(tabNumber) {
 	currentTabElement.className += " active-tab";
 
 	prevTab = tabNumber;
+	if (isDrawerItem) {
+		closeNav();
+	}
+}
+
+function openNav() {
+	var back = document.getElementById("drawer_background");
+	var width = screen.width;
+	var myNav = document.getElementById("nav_drawer");
+    back.style.visibility= 'visible';
+    myNav.style.right = "0%";
+
+    if (width < 500)
+    	myNav.style.width = "100%";
+	else
+		myNav.style.width = "50%";
+}
+
+function closeNav() {
+	var myNav = document.getElementById("nav_drawer");
+    var right = "-"+myNav.style.width;
+    myNav.style.right = right;
+    var back = document.getElementById("drawer_background");
+    back.style.visibility= 'hidden';
 }
