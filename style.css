@@ -73,15 +73,21 @@ body {
     color: var(--colorPrimary);
 }
 
-.overlay a:hover, .overlay a:focus {
+.overlay a:hover {
     color: var(--colorAccent);
 }
 
 .overlay .closebtn {
     position: absolute;
-    top: 20px;
+    text-decoration: none;
+    color: var(--colorPrimary);
+    cursor: pointer;
+    top: 24px;
     right: 20px;
-    font-size: 48px;
+}
+
+.closebtn i {
+	font-size: 36px;
 }
 
 
@@ -176,7 +182,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 80px;
+	padding: 60px;
 }
 
 .card {
@@ -202,8 +208,18 @@ h1 {
 	font-family: 'Poppins', sans-serif;
 }
 
+#terms_list {
+	margin: 0;
+	padding: 20px 40px;
+}
+
 .para-text li {
 	padding: 4px;
+}
+
+.privacy-list {
+	margin: 0;
+	padding: 8px 0 8px 24px;
 }
 
 .privacy-list li {
@@ -229,7 +245,6 @@ h1 {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 16px;
-	font-weight: bold;
 }
 
 .contact-form label > span {
@@ -281,43 +296,136 @@ h1 {
 		visibility: visible;
 	}
 
+	.heading-text {
+		margin-left: 20px;
+	}
+
     .second-toolbar {
     	display: none;
     }
 
     .main-content {
-    	padding: 20px;
+    	padding: 30px;
     }
 
     .card {
-    	padding: 30px;
+    	padding: 24px;
     }
 
     .overlay {
     	visibility: visible;
     }
+
+    h1 {
+		font-size: 24px;
+	}
+
+	#terms_list {
+		margin: 0;
+		padding: 16px 32px;
+	}
 }
 
 @media screen and (max-width: 500px) {
+	
+	.heading-text {
+		margin-left: 30px;
+	}
+
+	.main-content {
+    	padding: 20px;
+    }
+
     .para-text {
 		font-size: 14px;
+	}
+
+	.privacy-list {
+		font-size: 14px;
+	}
+
+	.contact-form label > span {
+    	font-size: 14px;
+	}
+
+	h1 {
+		font-size: 18px;
+	}
+
+	.main-content {
+    	padding: 16px;
+    }
+
+    .card {
+    	padding: 20px;
+    }
+
+    #terms_list {
+		margin: 0;
+		padding: 8px 16px;
 	}
 }
 
 @media screen and (max-width: 400px) {
 
-    .troffo-icon {
-		visibility: hidden;
+	.heading-text {
+		font-size: 18px;
 	}
 
 	.para-text {
 		font-size: 12px;
 	}
+
+	.privacy-list {
+		font-size: 12px;
+	}
+
+	.contact-form label > span {
+    	font-size: 12px;
+	}
+
+	.main-content {
+    	padding: 12px;
+    }
+
+    .card {
+    	padding: 18px;
+    }
 }
 
 @media screen and (max-width: 360px) {
 
+	.heading-text {
+		margin-left: 34px;
+	}
+
     #tab_div_4 {
 		width: 220px;
+	}
+}
+
+@media screen and (max-width: 330px) {
+
+	.troffo-icon {
+		visibility: hidden;
+	}
+
+	.heading-text {
+		margin-left: 0;
+	}
+
+    #tab_div_4 {
+		width: 220px;
+	}
+}
+
+@media screen and (max-width: 280px) {
+
+    #tab_div_4 {
+		width: 180px;
+	}
+
+	.contact-form label > span {
+    	font-size: 12px;
 	}
 }

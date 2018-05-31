@@ -4,39 +4,45 @@
 <head>
 	<meta charset="utf-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<title>About Page</title>
+  	<title>About Troffo</title>
+  	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="stylesheet" href="style.css">
 	<script src="main.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
 
 	<div id="drawer_background" class="drawer_background" onclick="closeNav()"></div>
 	<div id="nav_drawer" class="overlay">
-  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+<!--   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >
   			&times;
-  		</a>
+  		</a> -->
+  		<div class="closebtn" onclick="closeNav()">
+  			<i class="material-icons">close</i>
+  		</div>
   		<div class="overlay-content">
-  			<a href="/about" onclick="selectTab(1, true)">
+  			<a href="#about" onclick="selectTab(1, true)">
   				<div class="overlay-items">
   					<i class="fas fa-info-circle overlay-icon"></i>
     				<p>About</p>
     			</div>
     		</a>
-    		<a href="/terms" onclick="selectTab(2, true)">
+    		<a href="#terms" onclick="selectTab(2, true)">
     			<div class="overlay-items">
   					<i class="fas fa-file overlay-icon"></i>
     				<p>Terms Of Use</p>
     			</div>
     		</a>
-    		<a href="/privacy" onclick="selectTab(3, true)">
+    		<a href="#privacy" onclick="selectTab(3, true)">
 	    		<div class="overlay-items">
 	  				<i class="fas fa-user-secret overlay-icon"></i>
 	    			<p>Privacy Policy</p>
 	    		</div>
 	    	</a>
-	    	<a href="/contact" onclick="selectTab(4, true)">
+	    	<a href="#contact" onclick="selectTab(4, true)">
     			<div class="overlay-items">
   					<i class="fas fa-envelope overlay-icon"></i>
     				<p>Contact</p>
@@ -59,16 +65,16 @@
 		<div class="second-toolbar">
 			<ul class="tab-item-menu">
 				<li id="tab_1" onclick="selectTab(1, false)" class="tab-item active-tab">
-					<a href="/about">About</a>
+					<a href="#about">About</a>
 				</li>
 				<li id="tab_2" onclick="selectTab(2, false)" class="tab-item">
-					<a href="/terms">Terms Of Use</a>
+					<a href="#terms">Terms Of Use</a>
 				</li>
 				<li id="tab_3" onclick="selectTab(3, false)" class="tab-item">
-					<a href="/privacy">Privacy Policy</a>
+					<a href="#privacy">Privacy Policy</a>
 				</li>
 				<li id="tab_4" onclick="selectTab(4, false)" class="tab-item">
-					<a href="/contact">Contact</a>
+					<a href="#contact">Contact</a>
 				</li>
 			</ul>
 		</div>
@@ -99,7 +105,7 @@
 
 		<div id="tab_div_2" class="card hide-layout">
 			<h1>Terms & Conditions</h1>
-			<ol class="para-text" type="1">
+			<ol id="terms_list" class="para-text" type="1">
         		<li>You must be at least 13 years old to use the service.</li>
         		<li>
         		You can not post violent, naked, partially nude, discriminatory, unlawful, infringing, disgusting, pornographic or sexually suggestive photos or other content through the Service.
@@ -202,9 +208,9 @@
 					</label>
 					<label>
 						<span></span>
-						<div class="input-field" style="padding: 0; border: none; box-shadow: none;">
-							<input type="submit" value="Submit" class="submit-button" />
-						</div>
+							<div class="input-field" style="padding: 0; border: none; box-shadow: none;">
+								<input type="submit" value="Submit" class="submit-button" />
+							</div>
 					</label>
 				</form>
 			<div>
